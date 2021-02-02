@@ -17,7 +17,6 @@ while 1 > 0:
         nickles = int(input("How many nickles?: "))
         pennies = int(input("How many pennies?: "))
         total = (quarters * 0.25) + (dimes * 0.10) + (nickles * 0.05) + (pennies * 0.01)
-        total = round(total, 2)
         return total
 
     def not_enough(waterq, milkq, coffeeq):
@@ -39,7 +38,7 @@ while 1 > 0:
         order_cost = MENU[input_name]["cost"]
         total_input = coin_check()
         if total_input >= order_cost:
-            print(f"Here is ${total_input - order_cost} in change.")
+            print(f"Here is ${round(total_input - order_cost, 2)} in change.")
             Income += order_cost
 
             Water -= MENU[input_name]["ingredients"]["water"]
